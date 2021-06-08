@@ -93,6 +93,7 @@ int main()
 	}
 
 	//close the socket
-
+	close(clientSocket)
+	
 	return 0;
 }
