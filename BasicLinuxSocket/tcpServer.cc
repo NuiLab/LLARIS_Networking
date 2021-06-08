@@ -9,6 +9,8 @@
 constexpr int port = 40666;
 constexpr int bufferSize = 4096;
 
+//Maximum message capacity is within the bufferSize!!
+//	Therefore, the recv loop is allowed to run until either full message is received or array capacity is reached
 int receivingMessage(int initialSize, char* array, int socket)
 {
 	int received = 0;
@@ -29,9 +31,12 @@ int receivingMessage(int initialSize, char* array, int socket)
 	return initialSize;
 }
 
+//Maximum message length is constrained to the bufferSize, but message might be shorter than this.
+//	Therefore, additional argument exists for message length - but will be clamped to bufferSize at maximum.
 int sendingMessage(int totalSize, int initialSize, char* array, int socket)
 {
 	int sent = 0;
+	totalSize = (totalSize > bufferSize) ? bufferSize : totalSize;
 	int delta = totalSize - initialSize;
 	while (delta > 0)
 	{
@@ -93,7 +98,7 @@ int main()
 	}
 
 	//Stop listening
-	close(listening);
+	close(listening);//Only one client in this program
 	
 	//Make a connection
 	for (unsigned int i = 0; i < NI_MAXHOST; ++i)
