@@ -58,7 +58,7 @@ int receivingMessage(int initialSize, char* array, int socket)
 	if (sent < 0) return 0;
 	//std::cout << "Sent Total Bytes: " << initialSize << '\n';
 	return initialSize;
-}/*
+}*/
 
 int main()
 {
@@ -149,6 +149,8 @@ int main()
 			//std::cout << "Bytes received: " << result << '\n';
 		}
 		//std::cout << "Message: " << std::string(message+4, 0, result) << '\n';//Note, message+4 because first four bytes are length of message
+		uint32_t length = static_cast<uint32_t>(result);
+		std::memcpy(message, &length, 4);
 		int tempSize = send(clientSocket, message, result, 0);//plus one not needed for the len - will include '/0'
 		if (tempSize > 0)
 		{
