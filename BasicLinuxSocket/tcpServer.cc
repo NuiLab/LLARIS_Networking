@@ -5,23 +5,29 @@
 #include <unistd.h>
 #include <netdb.h>
 #include <arpa/inet.h>
+#include <cstdint> //uint32_t
+#include <cstring> //memcpy
 
 constexpr int port = 40666;
 constexpr int bufferSize = 4096;
+constexpr int bufferChunk = 1460;//Arbitrary, but current server on Digital Ocean is buffering in 1460 Byte segments
 
-//Maximum message capacity is within the bufferSize!!
-//	Therefore, the recv loop is allowed to run until either full message is received or array capacity is reached
+//Message length validated in iterative fashion.
+//	Length now requires that first 4 bytes of the initial recv call are the length of the entire message!
+//	This is important to resolving segmented buffering by the OS, if and only if (IFF) variable message lengths occur greater than the buffer chunk size!
 int receivingMessage(int initialSize, char* array, int socket)
 {
+	uint32_t totalSize;
 	int received = 0;
-	int delta = bufferSize - initialSize;
+	std::memcpy(&totalSize, array, 4);
+	int delta = totalSize - initialSize;
 	while (delta > 0)
 	{
-		received = recv(socket, (array + initialSize), delta, 0);
+		received = recv(socket, (array + initialSize), bufferChunk, 0);
 		if (received > 0)
 		{
 			initialSize += received;
-			delta = bufferSize - initialSize;
+			delta = totalSize - initialSize;
 			//std::cout << received << " Gathering long message... " << (bufferSize - initialSize) << "\n";
 		}
 		else break;
@@ -33,7 +39,8 @@ int receivingMessage(int initialSize, char* array, int socket)
 
 //Maximum message length is constrained to the bufferSize, but message might be shorter than this.
 //	Therefore, additional argument exists for message length - but will be clamped to bufferSize at maximum.
-int sendingMessage(int totalSize, int initialSize, char* array, int socket)
+//Unlikely needed, pending deprecation
+/*int sendingMessage(int totalSize, int initialSize, char* array, int socket)
 {
 	int sent = 0;
 	totalSize = (totalSize > bufferSize) ? bufferSize : totalSize;
@@ -51,7 +58,7 @@ int sendingMessage(int totalSize, int initialSize, char* array, int socket)
 	if (sent < 0) return 0;
 	//std::cout << "Sent Total Bytes: " << initialSize << '\n';
 	return initialSize;
-}
+}/*
 
 int main()
 {
@@ -141,7 +148,7 @@ int main()
 			}
 			//std::cout << "Bytes received: " << result << '\n';
 		}
-		//std::cout << "Message: " << std::string(message, 0, result) << '\n';
+		//std::cout << "Message: " << std::string(message+4, 0, result) << '\n';//Note, message+4 because first four bytes are length of message
 		int tempSize = send(clientSocket, message, result, 0);//plus one not needed for the len - will include '/0'
 		if (tempSize > 0)
 		{
