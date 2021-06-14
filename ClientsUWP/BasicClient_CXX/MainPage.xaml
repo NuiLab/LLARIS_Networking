@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="HelloWorld_UWP_CXX.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWorld_UWP_CXX"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
+            <TextBlock x:Name="Communicate" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" Text="Hello World" FontSize="36"/>
+            <Button x:Name="myButton" Height="104" Width="498" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
