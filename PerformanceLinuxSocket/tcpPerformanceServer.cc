@@ -18,30 +18,26 @@ int receivingMessage(int initialSize, char* array, int socket)
 {
 	uint32_t totalSize;
 	std::memcpy(&totalSize, array, 4);
-	std::cout << "total message size: " << totalSize << '\n';
-	//char tempBuffer[bufferChunk];
+	//std::cout << "total message size: " << totalSize << '\n';
 	int received = 0;
 	int delta = totalSize - initialSize;
 	while (delta > 0)
 	{
-		//received = recv(socket, (array + initialSize), ((delta < bufferChunk) ? bufferChunk : delta), 0);
-		//received = recv(socket, tempBuffer, bufferChunk, 0);
 		received = recv(socket, (array + initialSize), bufferChunk, 0);
 		if (received > 0)
 		{
 			initialSize += received;
 			delta = totalSize - initialSize;
 			//std::cout << received << " Gathering long message... " << delta << "\n";
-			//if (received < bufferChunk)break;
 		}
 		else if (received < 0)break;
 	}
 	if (received < 0) return 0;
-	std::cout << "Total Bytes Gathered: " << initialSize << '\n';
+	//std::cout << "Total Bytes Gathered: " << initialSize << '\n';
 	return initialSize;
 }
-//Maximum message length is constrained to the bufferSize, but message might be shorter than this.
-//      Therefore, additional argument exists for message length - but will be clamped to bufferSize at maximum.
+//Might not be an issue
+/*
 int sendingMessage(int totalSize, int initialSize, char* array, int socket)
 {
         int sent = 0;
@@ -61,6 +57,7 @@ int sendingMessage(int totalSize, int initialSize, char* array, int socket)
         std::cout << "Sent Total Bytes: " << initialSize << '\n';
         return initialSize;
 }
+*/
 
 int main()
 {
@@ -109,7 +106,7 @@ int main()
 	//Stop listening
 	close(listening);//if only accepting one client???
 	
-	//Make a connection
+	//Make a connection, and gather names of host and client
 	for (unsigned int i = 0; i < NI_MAXHOST; ++i)
 		host[i] = 0;
 	for (unsigned int i = 0; i < NI_MAXSERV; ++i)
@@ -147,6 +144,7 @@ int main()
 			sendResult = send(clientSocket, receive, result, 0);
 			if (sendResult < 0)//== SOCKET_ERROR)
 			{
+				//WINSOCK2 material commented out below, left in case moved back to Windows
 				std::cerr << "Could not echo back\n";//: Last error was " << WSAGetLastError() << "\n";
 				//closesocket(client);
 				//WSACleanup();
@@ -160,6 +158,7 @@ int main()
 			sendResult = send(clientSocket, receive, result, 0);
 			if (sendResult < 0)//== SOCKET_ERROR)
 			{
+				//WINSOCK2 material commented out below, left in case moved back to Windows
 				std::cerr << "Could not echo back\n";//: Last error was " << WSAGetLastError() << "\n";
 				//closesocket(client);
 				//WSACleanup();
@@ -175,7 +174,7 @@ int main()
 					break;
 				}
 			}
-			result = (result - 4) / 4;//result /= 4;
+			result = (result - 4) / 4;//Ignore first four bytes for message length, then every 4 bytes if one uint32_t of time data
 			std::cout << "received the performance metrics\n";
 			break;
 		}
@@ -183,6 +182,7 @@ int main()
 			std::cout << "Connection will now close\n";
 		else
 		{
+			//WINSOCK2 material commented out below, left in case moved back to Windows
 			std::cerr << "Could not receive from client\n";//: Last error was " << WSAGetLastError() << "\n";
 			//closesocket(client);
 			//WSACleanup();
@@ -192,18 +192,15 @@ int main()
 
 	} while (result > 0);
 
+	//Step A - part 1
 	std::vector<uint32_t> results(result);
 	for (int i = 1; i < result; i++)
 	{
 		std::memcpy(&results[i-1], &receive[i * 4], 4);
 	}
-	//Not enough memory available in the base level server, so converting just before writing out
-	std::ofstream rFile("raw.txt", std::ios::binary);
-	for (unsigned int i = 0; i < 4000; ++i)
-	{
-		rFile << receive[i];
-	}
-	rFile.close();
+	//End Step A - part 1
+	//If not enough memory on server, comment out step 'A' above and below, and uncomment step 'B'
+	//	Two ways of doing the same thing, step 'A' is technically more work to perform...
 	std::ofstream file("data.csv");
 	if (file)
 	{
@@ -214,15 +211,22 @@ int main()
 			count += 1;
 			for (unsigned int j = i * 100; j < (i * 100 + 100); ++j)
 			{
+				//Step B
 				//uint32_t temp;
 				//std::memcpy(&temp, &receive[j*4], 4);
 				//file << temp << ',';
+				//End Step B
+				
+				//Step A - part 2
 				file << results[j] << ',';
+				//End Step A - part 2
 			}
 		}
 	}
 	file.close();
 
+	//From recv chunk buffering fix, way to observe blocking vs non-blocking state of recv
+	/*
 	if (fcntl(clientSocket, F_GETFL) & O_NONBLOCK)
 	{
 		std::cout << "non-blocking\n";
@@ -230,7 +234,7 @@ int main()
 	else
 	{
 		std::cout << "blocking\n";
-	}
+	}*/
 
 	//close the socket
 	close(clientSocket);
