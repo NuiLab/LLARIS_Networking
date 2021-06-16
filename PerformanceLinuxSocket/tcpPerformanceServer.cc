@@ -168,14 +168,15 @@ int main()
 			result = recv(clientSocket, receive, bufferLength, 0);
 			if (result > 0)
 			{
-				if(!(receivingMessage(result, receive, clientSocket)))
+				if(!(result = receivingMessage(result, receive, clientSocket)))
 				{
 					std::cerr << "error in iteration recv\n";
 					break;
 				}
 			}
+			int prevResult = result;
 			result = (result - 4) / 4;//Ignore first four bytes for message length, then every 4 bytes if one uint32_t of time data
-			std::cout << "received the performance metrics\n";
+			std::cout << prevResult << " received the performance metrics, should be 4004 Bytes!\n";
 			break;
 		}
 		else if (result == 0)
