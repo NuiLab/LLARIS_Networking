@@ -128,7 +128,7 @@ class ClientTCP
 				//	Close the connection when messaging ceases.
 				//		This is disconnecting the sending end of the client, which in other circumstances might 
 				//			come after the disconnect from host (i.e. in the below when message size == 0)
-				int result = shutdown(connectMe, SD_SEND);
+				/*int result = shutdown(connectMe, SD_SEND);
 				//Failure or not, resest the Socket to being "invalid"
 				connectMe = INVALID_SOCKET;
 				if (result == SOCKET_ERROR)
@@ -137,8 +137,9 @@ class ClientTCP
 					closesocket(connectMe);
 					WSACleanup();
 					return "Shutdown Failure, BUT Socket Closed";
-				}
+				}*/
 				closesocket(connectMe);
+				connectMe = INVALID_SOCKET;
 				WSACleanup();
 				return "Closed Socket";
 			}
@@ -154,10 +155,10 @@ class ClientTCP
 				int result = recv(connectMe, &receiveMessage[0], BUFFER_CHUNK, 0);
 				if (result > 0)
 				{
-					if (!(result = receivingMessage(result, &receiveMessage[0], connectMe)))
+					/*if (!(result = receivingMessage(result, &receiveMessage[0], connectMe)))
 					{
 						return "Failure to RECEIVE";
-					}
+					}*/
 					lastUpdate = std::chrono::steady_clock::now();
 				}
 				else if (result == 0)
