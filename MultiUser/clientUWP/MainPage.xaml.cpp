@@ -156,6 +156,11 @@ void ChitChatTCP::MainPage::myButton_Click(Platform::Object^ sender, Windows::UI
 	else
 	{
 		connected = false;
+		state.store(false, std::memory_order_relaxed);
+		while (!terminated.load(std::memory_order_relaxed))
+		{
+			//spin until the daemon thread closes
+		}
 		client.closeConnection();
 		//Get the Daemon thread to terminate...
 		state.store(false, std::memory_order_relaxed);
