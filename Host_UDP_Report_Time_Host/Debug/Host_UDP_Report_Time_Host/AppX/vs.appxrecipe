@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-QQLA413</Machine>
+    <WindowsUser>Dan</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|Win32</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>24d7aa04-2c80-4565-a47b-6bd8fb12f637</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Dan</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\AppX</LayoutDir>
+    <RegisteredManifestChecksum>1376C02C7C38E5EF0B186C6AA4C76279F149FFF1DFD3F48DE38E403B31D956E6</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>24d7aa04-2c80-4565-a47b-6bd8fb12f637_1.0.0.0_x86__m2mhzkw71ghyc</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>24d7aa04-2c80-4565-a47b-6bd8fb12f637_m2mhzkw71ghyc!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>24d7aa04-2c80-4565-a47b-6bd8fb12f637</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Dan</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-09-19T23:11:59.402</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host.exe">
+      <PackagePath>Host_UDP_Report_Time_Host.exe</PackagePath>
+      <Modified>2021-09-23T16:31:58.475</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host.winmd">
+      <PackagePath>Host_UDP_Report_Time_Host.winmd</PackagePath>
+      <Modified>2021-09-19T22:31:46.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2021-03-26T20:52:49.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.844</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.845</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.846</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.848</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.849</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Host_UDP_Report_Time_Host\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-26T20:52:49.850</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2021-09-23T16:31:58.167</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2021-09-23T16:31:58.167</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2020-12-02T10:59:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Dan\source\repos\Host_UDP_Report_Time_Host\Debug\Host_UDP_Report_Time_Host\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2021-09-19T23:11:59.364</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.29231.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.29231.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.29231.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.29231.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="Host_UDP_Report_Time_Host.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Host_UDP_Report_Time_Host"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="Header" HorizontalAlignment="Center" Text="Inactive" FontSize="36"/>
+        <Button x:Name="SendNew" Height="104" Width="498" Click="SendNew_Click" Content="Send"/>
+        <Button x:Name="SendZero" Height="104" Width="498" Click="SendZero_Click" Content="Terminate" Margin="1002,443,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="GetClient" Height="104" Width="498" Click="GetClient_Click" Content="Gather" HorizontalAlignment="Center" Margin="0,632,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

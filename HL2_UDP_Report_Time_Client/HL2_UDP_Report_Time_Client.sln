@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HL2_UDP_Report_Time_Client", "HL2_UDP_Report_Time_Client\HL2_UDP_Report_Time_Client.vcxproj", "{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM.Build.0 = Debug|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM.Deploy.0 = Debug|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM64.Build.0 = Debug|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x64.ActiveCfg = Debug|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x64.Build.0 = Debug|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x64.Deploy.0 = Debug|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x86.Build.0 = Debug|Win32
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Debug|x86.Deploy.0 = Debug|Win32
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM.ActiveCfg = Release|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM.Build.0 = Release|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM.Deploy.0 = Release|ARM
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM64.ActiveCfg = Release|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM64.Build.0 = Release|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|ARM64.Deploy.0 = Release|ARM64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x64.ActiveCfg = Release|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x64.Build.0 = Release|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x64.Deploy.0 = Release|x64
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x86.ActiveCfg = Release|Win32
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x86.Build.0 = Release|Win32
+		{FE62F2AE-5F55-41A3-9360-C3E474BFCB08}.Release|x86.Deploy.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0B599F5-908B-4A50-9381-EF0D8C3252B8}
+	EndGlobalSection
+EndGlobal
